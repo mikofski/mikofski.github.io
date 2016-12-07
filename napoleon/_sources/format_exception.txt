@@ -1,0 +1,143 @@
+NumPyDoc vs. Sphinx and Google Format
+=====================================
+
+.. automodule:: format_exception
+
+
+Check out the differences between `Sphinx and Google formats`_ and `NumPyDoc`_
+in Sphinx documentation built for html.
+
+Sphinxy
+-------
+
+.. autofunction:: format_exception_Sphinx
+
+That's based on this docstring from `an example in the Sphinx tutorial`_ which
+I embellished slightly::
+
+    def format_exception_Sphinx(etype, value, tb, limit=None):
+        """
+        Format the exception with a traceback.
+
+        :arg etype:  exception type
+        :type etype: str
+        :arg value: exception value
+        :type value: int
+        :arg tb: traceback object
+        :type tb: traceback
+        :keyword limit: maximum number of stack frames to show [optional]
+        :type limit: int or None
+        :returns: out
+        :rtype: list of strings
+        :raises: AttributeError, KeyError
+
+        A really great idea.  A way you might use me is
+
+        >>> data = format_exception_Sphinx('stoopid', 1, ValueError)
+        """
+        return etype, value, tb
+
+Googley
+-------
+
+I used to hate the Google-style format, even though the docstring is more human
+readable, the documented form was unspectacular. But now with Napoleon it's the
+same as the sphinx format.
+
+.. autofunction:: format_exception_google
+
+Here's the `recommended Google format`_::
+
+    def format_exception_google(etype, value, tb, limit=None):
+        """
+        Format the exception with a traceback.
+
+        Args:
+           etype (str):  exception type
+           value (int):  exception value
+           tb (traceback): traceback object
+
+        Keyword Args:
+           limit (int or None):  maximum number of stack frames to show [optional]
+
+        Returns:
+           out:  list of strings
+
+        Raises:
+           AttributeError, KeyError
+
+        A really great idea.  A way you might use me is
+
+        >>> data = format_exception_google('wow', 999, KeyError)
+        """
+        return etype, value, tb
+
+NumPyDoc
+--------
+
+On the other hand, I really like the NumPy format. 
+
+.. autofunction:: format_exception_numpy
+
+The docstring for NumPyDoc is very readable::
+
+    def format_exception_numpy(etype, value, tb, limit=None):
+        """
+        Format the exception with a traceback.
+
+        Parameters
+        ----------
+        etype : str
+            exception type
+        value : int
+            exception value
+        tb : traceback
+            traceback object
+        limit : int or None
+            maximum number of stack frames to show
+
+        Returns
+        -------
+        out : list of strings
+            list of strings
+
+        See Also
+        --------
+        numpy : a numerical package
+
+        Notes
+        -----
+        This is an example of autodoc using numpydoc, the Numpy documentation format
+        with the numpydoc extension [1]_
+
+        This explanation of the column headers is not complete, for an exhaustive
+        specification see [2]_.
+
+        References
+        ----------
+        .. [1] `numpydoc <https://github.com/numpy/numpy/tree/master/doc/sphinxext>`_, \
+            Numpy Documentation.
+        .. [2] `Sphinx <http://sphinx-doc.org/domains.html#domains>`_, Sphinx Domains \
+            Documentation.
+
+        Examples
+        --------
+        >>> data = format_exception_numpy('dumb', 0, IOError)
+        """
+        return etype, value, tb
+
+Haven’t tried to use np in rst docs, only as autodoc from .py docstrings. It
+does include directives for “numpy” domain as “np”. Unfortunately Numpydoc also
+makes 2 sets of module indices, (py-modules and np-modules).
+
+.. _an example in the Sphinx tutorial: \
+    http://sphinx-doc.org/domains.html#info-field-lists
+
+.. _Sphinx and Google formats: \
+    http://pythonhosted.org/an_example_pypi_project/pkgcode.html
+
+.. _NumPyDoc: \
+    https://github.com/numpy/numpy/tree/master/doc/sphinxext
+
+.. _recommended Google format: \
+    http://google-styleguide.googlecode.com/svn/trunk/pyguide.html
