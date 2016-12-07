@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Consolidated Fields &mdash; FoxyFormatException 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="FoxyFormatException 0.1 documentation" href="index.html" />
+    <link rel="prev" title="NumPyDoc vs. Sphinx and Google Format" href="format_exception.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="format_exception.html" title="NumPyDoc vs. Sphinx and Google Format"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">FoxyFormatException 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-fox">
+<span id="consolidated-fields"></span><h1>Consolidated Fields<a class="headerlink" href="#module-fox" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://sphinx-docs.org">Sphinx</a> can use <a class="reference external" href="http://epydoc.sourceforge.net/manual-othermarkup.html#consolidated-fields">consolidated fields</a> with mixed results.</p>
+<div class="section" id="without">
+<h2>Without<a class="headerlink" href="#without" title="Permalink to this headline">¶</a></h2>
+<p>The first example is traditional Sphinx with some extra glitz.</p>
+<dl class="function">
+<dt id="fox.foxy">
+<tt class="descclassname">fox.</tt><tt class="descname">foxy</tt><big>(</big><em>size</em>, <em>weight</em>, <em>age</em><big>)</big><a class="headerlink" href="#fox.foxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum speed for a fox.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> &#8211; The size of the fox (in meters)</li>
+<li><strong>weight</strong> (<em>float</em>) &#8211; The weight of the fox (in stones)</li>
+<li><strong>age</strong> (<em>int</em>) &#8211; The age of the fox (in years)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>velocity</strong> (<cite>float</cite>) &#8211; The velocity of the fox.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>It was autodoc&#8217;d from this docstrings:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">foxy</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the maximum speed for a fox.</span>
+
+<span class="sd">    :parameter size: The size of the fox (in meters)</span>
+<span class="sd">    :parameter weight: The weight of the fox (in stones)</span>
+<span class="sd">    :type weight: float</span>
+<span class="sd">    :parameter age: The age of the fox (in years)</span>
+<span class="sd">    :type age: int</span>
+<span class="sd">    :returns: - **velocity** (`float`) -- The velocity of the fox.</span>
+<span class="sd">    :rtype: `float`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">size</span> <span class="o">/</span> <span class="n">age</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with">
+<h2>With<a class="headerlink" href="#with" title="Permalink to this headline">¶</a></h2>
+<p>The second and third examples are consolidated fields. The second uses bullets
+and the third indentation.</p>
+<dl class="function">
+<dt id="fox.fox_velocity">
+<tt class="descclassname">fox.</tt><tt class="descname">fox_velocity</tt><big>(</big><em>size</em>, <em>weight</em>, <em>age</em><big>)</big><a class="headerlink" href="#fox.fox_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum speed for a fox.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><cite>size</cite>: The size of the fox (in meters)</li>
+<li><cite>weight</cite>: The weight of the fox (in stones)</li>
+<li><cite>age</cite>: The age of the fox (in years)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><cite>velocity</cite>: The velocity of the fox.</li>
+</ul>
+</dd></dl>
+
+<p>Personally I like the indented version, it reads well, and also formats well in
+sphinx, except the arguments are not boldface, although the arg types are
+italicized.</p>
+<dl class="function">
+<dt id="fox.fox_speed">
+<tt class="descclassname">fox.</tt><tt class="descname">fox_speed</tt><big>(</big><em>size</em>, <em>weight</em>, <em>age</em><big>)</big><a class="headerlink" href="#fox.fox_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum speed for a fox.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><dl class="first docutils">
+<dt>size</dt>
+<dd><p class="first last">The size of the fox (in meters)</p>
+</dd>
+<dt>weight <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The weight of the fox (in stones)</p>
+</dd>
+<dt>age <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The age of the fox (in years)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><dl class="first last docutils">
+<dt>speed <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The speed of the fox.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>Which corresponds to these docstrings:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">fox_velocity</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the maximum speed for a fox.</span>
+
+<span class="sd">    :Parameters:</span>
+
+<span class="sd">    - `size`: The size of the fox (in meters)</span>
+
+<span class="sd">    - `weight`: The weight of the fox (in stones)</span>
+
+<span class="sd">    - `age`: The age of the fox (in years)</span>
+
+<span class="sd">    :Returns:</span>
+
+<span class="sd">    - `velocity`: The velocity of the fox.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">size</span> <span class="o">/</span> <span class="n">age</span>
+
+
+<span class="k">def</span> <span class="nf">fox_speed</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the maximum speed for a fox.</span>
+
+<span class="sd">    :Parameters:</span>
+<span class="sd">      size</span>
+<span class="sd">        The size of the fox (in meters)</span>
+<span class="sd">      weight : float</span>
+<span class="sd">        The weight of the fox (in stones)</span>
+<span class="sd">      age : int</span>
+<span class="sd">        The age of the fox (in years)</span>
+<span class="sd">    :Returns:</span>
+<span class="sd">      speed : float</span>
+<span class="sd">        The speed of the fox.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">size</span> <span class="o">/</span> <span class="n">age</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Consolidated Fields</a><ul>
+<li><a class="reference internal" href="#without">Without</a></li>
+<li><a class="reference internal" href="#with">With</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="format_exception.html"
+                        title="previous chapter">NumPyDoc vs. Sphinx and Google Format</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/fox.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="format_exception.html" title="NumPyDoc vs. Sphinx and Google Format"
+             >previous</a> |</li>
+        <li><a href="index.html">FoxyFormatException 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mark Mikofski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

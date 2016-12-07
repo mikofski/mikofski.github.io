@@ -1,0 +1,87 @@
+Consolidated Fields
+===================
+
+.. automodule:: fox
+
+`Sphinx`_ can use `consolidated fields`_ with mixed results.
+
+Without
+-------
+
+The first example is traditional Sphinx with some extra glitz.
+
+.. autofunction:: foxy
+
+It was autodoc'd from this docstrings::
+
+    def foxy(size, weight, age):
+        """
+        Return the maximum speed for a fox.
+
+        :parameter size: The size of the fox (in meters)
+        :parameter weight: The weight of the fox (in stones)
+        :type weight: float
+        :parameter age: The age of the fox (in years)
+        :type age: int
+        :returns: - **velocity** (`float`) -- The velocity of the fox.
+        :rtype: `float`
+        """
+        return size / age
+
+With
+----
+
+The second and third examples are consolidated fields. The second uses bullets
+and the third indentation.
+
+.. autofunction:: fox_velocity
+
+Personally I like the indented version, it reads well, and also formats well in
+sphinx, except the arguments are not boldface, although the arg types are
+italicized.
+
+.. autofunction:: fox_speed
+
+Which corresponds to these docstrings::
+
+    def fox_velocity(size, weight, age):
+        """
+        Return the maximum speed for a fox.
+
+        :Parameters:
+
+        - `size`: The size of the fox (in meters)
+
+        - `weight`: The weight of the fox (in stones)
+
+        - `age`: The age of the fox (in years)
+
+        :Returns:
+
+        - `velocity`: The velocity of the fox.
+
+        """
+        return size / age
+
+
+    def fox_speed(size, weight, age):
+        """
+        Return the maximum speed for a fox.
+
+        :Parameters:
+          size
+            The size of the fox (in meters)
+          weight : float
+            The weight of the fox (in stones)
+          age : int
+            The age of the fox (in years)
+        :Returns:
+          speed : float
+            The speed of the fox.
+        """
+        return size / age
+
+.. _Sphinx: http://sphinx-docs.org
+
+.. _consolidated fields: \
+    http://epydoc.sourceforge.net/manual-othermarkup.html#consolidated-fields

@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NumPyDoc vs. Sphinx and Google Format &mdash; FoxyFormatException 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="FoxyFormatException 0.1 documentation" href="index.html" />
+    <link rel="next" title="Consolidated Fields" href="fox.html" />
+    <link rel="prev" title="Welcome to FoxyFormatException’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fox.html" title="Consolidated Fields"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to FoxyFormatException’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">FoxyFormatException 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-format_exception">
+<span id="numpydoc-vs-sphinx-and-google-format"></span><h1>NumPyDoc vs. Sphinx and Google Format<a class="headerlink" href="#module-format_exception" title="Permalink to this headline">¶</a></h1>
+<p>Check out the differences between <a class="reference external" href="http://pythonhosted.org/an_example_pypi_project/pkgcode.html">Sphinx and Google formats</a> and <a class="reference external" href="https://github.com/numpy/numpy/tree/master/doc/sphinxext">NumPyDoc</a>
+in Sphinx documentation built for html.</p>
+<div class="section" id="sphinxy">
+<h2>Sphinxy<a class="headerlink" href="#sphinxy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="format_exception.format_exception_Sphinx">
+<tt class="descclassname">format_exception.</tt><tt class="descname">format_exception_Sphinx</tt><big>(</big><em>etype</em>, <em>value</em>, <em>tb</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#format_exception.format_exception_Sphinx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the exception with a traceback.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>etype</strong> (<em>str</em>) &#8211; exception type</li>
+<li><strong>value</strong> (<em>int</em>) &#8211; exception value</li>
+<li><strong>tb</strong> (<em>traceback</em>) &#8211; traceback object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Key limit:</th><td class="field-body"><p class="first">maximum number of stack frames to show [optional]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">out</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list of strings</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">AttributeError, KeyError</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A really great idea.  A way you might use me is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">format_exception_Sphinx</span><span class="p">(</span><span class="s">&#39;stoopid&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>That&#8217;s based on this docstring from <a class="reference external" href="http://sphinx-doc.org/domains.html#info-field-lists">an example in the Sphinx tutorial</a> which
+I embellished slightly:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">format_exception_Sphinx</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Format the exception with a traceback.</span>
+
+<span class="sd">    :arg etype:  exception type</span>
+<span class="sd">    :type etype: str</span>
+<span class="sd">    :arg value: exception value</span>
+<span class="sd">    :type value: int</span>
+<span class="sd">    :arg tb: traceback object</span>
+<span class="sd">    :type tb: traceback</span>
+<span class="sd">    :key limit: maximum number of stack frames to show [optional]</span>
+<span class="sd">    :type limit: int or None</span>
+<span class="sd">    :returns: out</span>
+<span class="sd">    :rtype: list of strings</span>
+<span class="sd">    :raises: AttributeError, KeyError</span>
+
+<span class="sd">    A really great idea.  A way you might use me is</span>
+
+<span class="sd">    &gt;&gt;&gt; data = format_exception_Sphinx(&#39;stoopid&#39;, 1, ValueError)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="googley">
+<h2>Googley<a class="headerlink" href="#googley" title="Permalink to this headline">¶</a></h2>
+<p>I kind of hate the google format, even though the docstring is more human
+readable, the documented form is unspectacular.</p>
+<dl class="function">
+<dt id="format_exception.format_exception_google">
+<tt class="descclassname">format_exception.</tt><tt class="descname">format_exception_google</tt><big>(</big><em>etype</em>, <em>value</em>, <em>tb</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#format_exception.format_exception_google" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the exception with a traceback.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">etype (str):  exception type</p>
+<p>value (int):  exception value</p>
+<p class="last">tb (traceback): traceback object</p>
+</dd>
+<dt>Kwargs:</dt>
+<dd>limit (int or None):  maximum number of stack frames to show [optional]</dd>
+<dt>Returns:</dt>
+<dd>out:  list of strings</dd>
+<dt>Raises:</dt>
+<dd>AttributeError, KeyError</dd>
+</dl>
+<p>A really great idea.  A way you might use me is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">format_exception_google</span><span class="p">(</span><span class="s">&#39;wow&#39;</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>Here&#8217;s the <a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html">recommended Google format</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">format_exception_google</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Format the exception with a traceback.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">       etype (str):  exception type</span>
+
+<span class="sd">       value (int):  exception value</span>
+
+<span class="sd">       tb (traceback): traceback object</span>
+
+<span class="sd">    Kwargs:</span>
+<span class="sd">       limit (int or None):  maximum number of stack frames to show [optional]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">       out:  list of strings</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">       AttributeError, KeyError</span>
+
+<span class="sd">    A really great idea.  A way you might use me is</span>
+
+<span class="sd">    &gt;&gt;&gt; data = format_exception_google(&#39;wow&#39;, 999, KeyError)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numpydoc">
+<h2>NumPyDoc<a class="headerlink" href="#numpydoc" title="Permalink to this headline">¶</a></h2>
+<p>On the other hand, I really like the NumPy format.</p>
+<dl class="function">
+<dt id="format_exception.format_exception_numpy">
+<tt class="descclassname">format_exception.</tt><tt class="descname">format_exception_numpy</tt><big>(</big><em>etype</em>, <em>value</em>, <em>tb</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#format_exception.format_exception_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the exception with a traceback.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>etype</strong> : str</p>
+<blockquote>
+<div><p>exception type</p>
+</div></blockquote>
+<p><strong>value</strong> : int</p>
+<blockquote>
+<div><p>exception value</p>
+</div></blockquote>
+<p><strong>tb</strong> : traceback</p>
+<blockquote>
+<div><p>traceback object</p>
+</div></blockquote>
+<p><strong>limit</strong> : int or None</p>
+<blockquote>
+<div><p>maximum number of stack frames to show</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>list of strings</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><tt class="xref py py-obj docutils literal"><span class="pre">numpy</span></tt></dt>
+<dd>a numerical package</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>This is an example of autodoc using numpydoc, the Numpy documentation format
+with the numpydoc extension <a class="reference internal" href="#r1">[R1]</a></p>
+<p>This explanation of the column headers is not complete, for an exhaustive
+specification see <a class="reference internal" href="#r2">[R2]</a>.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference external" href="https://github.com/numpy/numpy/tree/master/doc/sphinxext">numpydoc</a>,         Numpy Documentation.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> <a class="reference external" href="http://sphinx-doc.org/domains.html#domains">Sphinx</a>, Sphinx Domains         Documentation.</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">format_exception_numpy</span><span class="p">(</span><span class="s">&#39;dumb&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>The docstring for NumPyDoc is very readable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">format_exception_numpy</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Format the exception with a traceback.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    etype : str</span>
+<span class="sd">        exception type</span>
+<span class="sd">    value : int</span>
+<span class="sd">        exception value</span>
+<span class="sd">    tb : traceback</span>
+<span class="sd">        traceback object</span>
+<span class="sd">    limit : int or None</span>
+<span class="sd">        maximum number of stack frames to show</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : list of strings</span>
+<span class="sd">        list of strings</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    numpy : a numerical package</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This is an example of autodoc using numpydoc, the Numpy documentation format</span>
+<span class="sd">    with the numpydoc extension [1]_</span>
+
+<span class="sd">    This explanation of the column headers is not complete, for an exhaustive</span>
+<span class="sd">    specification see [2]_.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] `numpydoc &lt;https://github.com/numpy/numpy/tree/master/doc/sphinxext&gt;`_, \</span>
+<span class="sd">        Numpy Documentation.</span>
+<span class="sd">    .. [2] `Sphinx &lt;http://sphinx-doc.org/domains.html#domains&gt;`_, Sphinx Domains \</span>
+<span class="sd">        Documentation.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = format_exception_numpy(&#39;dumb&#39;, 0, IOError)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span>
+</pre></div>
+</div>
+<p>Haven’t tried to use np in rst docs, only as autodoc from .py docstrings. It
+does include directives for “numpy” domain as “np”. Unfortunately Numpydoc also
+makes 2 sets of module indices, (py-modules and np-modules).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">NumPyDoc vs. Sphinx and Google Format</a><ul>
+<li><a class="reference internal" href="#sphinxy">Sphinxy</a></li>
+<li><a class="reference internal" href="#googley">Googley</a></li>
+<li><a class="reference internal" href="#numpydoc">NumPyDoc</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to FoxyFormatException&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fox.html"
+                        title="next chapter">Consolidated Fields</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/format_exception.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fox.html" title="Consolidated Fields"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to FoxyFormatException’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">FoxyFormatException 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mark Mikofski.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
