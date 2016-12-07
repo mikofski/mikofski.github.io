@@ -1,0 +1,7 @@
+mhchem example
+==============
+
+.. math::
+    \ce{A + $h$\nu ->[k_A] B}
+
+    \ce{R + $h$\nu ->[k_R] Y}

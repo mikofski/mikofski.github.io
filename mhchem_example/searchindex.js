@@ -1,0 +1,1 @@
+Search.setIndex({objects:{},terms:{index:0,mhchem:[0,1],welcom:0,modul:0,search:0,indic:0,exampl:[0,1],tabl:0,document:0,page:0},objtypes:{},titles:["Welcome to documentation&#8217;s documentation!","mhchem example"],objnames:{},filenames:["index","mhchem_example"]})
